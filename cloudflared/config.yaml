@@ -11,5 +11,5 @@ data:
     no-autoupdate: true
     ingress:
       - hostname: kabeeja.xyz
-        service: http://10.152.183.100:80
+        service: http://10.152.183.91:80
       - service: http_status:404
