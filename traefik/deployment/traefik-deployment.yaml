@@ -66,7 +66,7 @@ spec:
         - --certificatesresolvers.cloudflare.acme.email=pongpich.sing@gmail.com
         - --certificatesresolvers.cloudflare.acme.storage=/var/traefik/certs/cloudflare-acme.json
         - --certificatesresolvers.cloudflare.acme.keyType=EC256
-        - --certificatesresolvers.cloudflare.acme.caServer=https://acme-v02.api.letsencrupt.org/directory
+        - --certificatesresolvers.cloudflare.acme.caServer=https://acme-v02.api.letsencrypt.org/directory
         # - --certificatesresolvers.cloudflare.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory
         - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
         - --certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53
