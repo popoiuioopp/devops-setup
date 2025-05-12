@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: smart-route-web
+  namespace: smart-route
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`smart-route.pongpich.com`)
+      kind: Rule
+      services:
+        - name: smart-route
+          namespace: smart-route
+          port: 3000
+  tls:
+    certResolver: cloudflare

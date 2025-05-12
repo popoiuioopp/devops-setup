@@ -1,0 +1,19 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: kube-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`traefik.pongpich.com`)
+      kind: Rule
+      middlewares:
+        - name: traefik-dashboard-auth
+          namespace: kube-system
+      services:
+        - name: api@internal
+          kind: TraefikService
+  tls:
+    certResolver: cloudflare
